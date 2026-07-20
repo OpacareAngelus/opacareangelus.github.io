@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artem Pelevin — Android Developer</title>
+<meta name="description" content="Artem Pelevin — Android Developer. Resume / CV.">
+<style>
+  :root {
+    --sidebar-bg: #2b3444;
+    --sidebar-text: #dfe3ea;
+    --sidebar-heading: #ffffff;
+    --sidebar-muted: #a8b0c0;
+    --main-bg: #ffffff;
+    --main-text: #2b2f36;
+    --main-heading: #1a1d23;
+    --accent: #4f7cff;
+    --rule: #e6e8ec;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--sidebar-bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--main-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .page {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    background: var(--main-bg);
+    box-shadow: 0 0 40px rgba(0,0,0,0.25);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    width: 34%;
+    min-width: 260px;
+    padding: 40px 28px;
+  }
+
+  .sidebar h2 {
+    color: var(--sidebar-heading);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+
+  .sidebar section {
+    margin-bottom: 32px;
+  }
+  .sidebar section:last-child { margin-bottom: 0; }
+
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar li {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .sidebar li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .soft-skills p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--sidebar-text);
+    margin: 0;
+  }
+
+  .edu-block { margin-bottom: 14px; }
+  .edu-block:last-child { margin-bottom: 0; }
+  .edu-year {
+    font-size: 13.5px;
+    color: var(--sidebar-muted);
+    margin: 0 0 2px;
+  }
+  .edu-field {
+    font-size: 13.5px;
+    color: var(--sidebar-text);
+  }
+
+  /* Main */
+  .main {
+    flex: 1;
+    padding: 40px 44px;
+  }
+
+  .name {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--main-heading);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .role {
+    font-size: 16px;
+    color: #5a6270;
+    margin: 0 0 18px;
+    font-weight: 500;
+  }
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--main-text);
+  }
+
+  .contact-item .ico {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .contact-item a:hover { text-decoration: underline; }
+
+  h1.section-title {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--main-heading);
+    font-weight: 700;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+
+  .section { margin-bottom: 30px; }
+  .section:last-child { margin-bottom: 0; }
+
+  .profile-text {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #3c4250;
+    margin: 0;
+  }
+
+  .job { margin-bottom: 26px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin-bottom: 8px;
+  }
+
+  .job-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--main-heading);
+  }
+
+  .job-dates {
+    font-size: 13px;
+    color: #8a91a0;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .job ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .job li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3c4250;
+    margin-bottom: 7px;
+  }
+  .job li:last-child { margin-bottom: 0; }
+
+  footer.print-hint {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .page { flex-direction: column; box-shadow: none; }
+    .sidebar { width: 100%; min-width: 0; }
+    .main { padding: 32px 24px; }
+    .name { font-size: 28px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; max-width: 100%; }
+    .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+  <!-- TODO before publishing: fill in real URLs for .js-linkedin, .js-website, .js-play (currently "#") -->
+  <div class="page">
+    <aside class="sidebar">
+      <section>
+        <h2>Hard Skills</h2>
+        <ul>
+          <li>Java, Kotlin</li>
+          <li>OOP, MVVM, MVC, MVI, MVP</li>
+          <li>Android SDK, Gradle, Groovy</li>
+          <li>XML, Jetpack Compose (UI), Design System, Modular Architecture</li>
+          <li>Multithreading, Coroutines, RxJava</li>
+          <li>StateFlow &amp; SharedFlow, LiveData</li>
+          <li>REST API, Retrofit2, OkHttp 3, Ktor</li>
+          <li>SQLite, SharedPref, Jetpack DataStore, MMKV, Hawk, Room, Realm, Firebase</li>
+          <li>Koin, Hilt, Dagger2</li>
+          <li>WebView, AppsFlyer, OneSignal</li>
+          <li>Keitaro</li>
+          <li>GIT, Postman, Trello / Jira, Figma</li>
+          <li>Google Play Console</li>
+          <li>Claude, Grok, Gemini, Copilot</li>
+        </ul>
+      </section>
+
+      <section class="soft-skills">
+        <h2>Soft Skills</h2>
+        <p>
+          Proactivity, leadership in building and mentoring IT teams from scratch, analytical mind,
+          critical thinking, responsibility, ability to learn quickly, ability to teach and mentor
+          others, independence, problem solving, sense of humor, adaptability, excellent
+          communication, organizational skills, teamwork, ability to delegate.
+        </p>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <ul>
+          <li>English — B2</li>
+          <li>Ukrainian — Native</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-block">
+          <p class="edu-year">Sh++, 2022</p>
+          <p class="edu-field">Android Development</p>
+        </div>
+        <div class="edu-block">
+          <p class="edu-year">Sh++, 2022</p>
+          <p class="edu-field">Computer Science</p>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h1 class="name">Artem Pelevin</h1>
+      <p class="role">Android Developer</p>
+
+      <div class="contacts">
+        <span class="contact-item">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 4.5 2.5 11.9c-.9.36-.86 1.65.05 1.95l4.6 1.5 1.7 5.3c.28.86 1.4 1.05 1.96.35l2.6-3.2 4.8 3.55c.8.6 1.95.15 2.13-.85l3-16.2c.16-.86-.72-1.55-1.34-1.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <a href="https://t.me/opacare" target="_blank" rel="noopener">@opacare</a>
+        </span>
+        <span class="contact-item">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="4" height="11" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h4v11H3z" fill="currentColor"/><circle cx="5" cy="5" r="2" fill="currentColor"/><path d="M11 20V9h4v1.6c.9-1.2 2.3-1.9 3.8-1.9 2.9 0 4.2 2 4.2 5.1V20h-4v-4.7c0-1.3-.5-2.3-1.7-2.3-1 0-1.6.7-1.9 1.4-.1.3-.1.6-.1 1V20h-4Z" fill="currentColor"/></svg>
+          </span>
+          <a href="#" class="js-linkedin" target="_blank" rel="noopener">Артем Пелевін</a>
+        </span>
+        <span class="contact-item">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <a href="#" class="js-website" target="_blank" rel="noopener">OpacareAngelus</a>
+        </span>
+        <span class="contact-item">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <a href="mailto:opacareangelus@gmail.com">opacareangelus@gmail.com</a>
+        </span>
+        <span class="contact-item">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <polygon points="5,2.8 5,12 18.2,12 14.3,8.3" fill="#4285F4"/>
+              <polygon points="14.3,8.3 20.5,12 18.2,12" fill="#34A853"/>
+              <polygon points="14.3,15.7 20.5,12 18.2,12" fill="#FBBC05"/>
+              <polygon points="5,21.2 5,12 18.2,12 14.3,15.7" fill="#EA4335"/>
+            </svg>
+          </span>
+          <a href="#" class="js-play" target="_blank" rel="noopener">Google Play Market</a>
+        </span>
+      </div>
+
+      <section class="section">
+        <h1 class="section-title">Profile</h1>
+        <p class="profile-text">
+          I am a passionate Android developer driven by a commitment to technical excellence.
+          My keen attention to detail ensures that the applications I create stand out for their
+          quality and execution. I thrive in a collaborative environment, contributing to team
+          success through effective teamwork and leadership — including successfully building
+          and mentoring IT teams from scratch.
+        </p>
+      </section>
+
+      <section class="section">
+        <h1 class="section-title">Experience</h1>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Trident Media</span>
+            <span class="job-dates">March 2023 — May 2026</span>
+          </div>
+          <ul>
+            <li>Developed full-featured Android applications from scratch, as well as core Android SDK components and reusable libraries, focusing on performance, security, usability and seamless integration into partner mobile applications.</li>
+            <li>Ensured excellent multi-device compatibility by testing and optimizing applications across a wide range of Android devices — from low-end budget phones to high-end flagships (different screen sizes, densities, API levels 26+).</li>
+            <li>Designed and implemented scalable, clean architecture (MVVM, MVI) with strong emphasis on maintainable and well-tested code.</li>
+            <li>Built reliable data exchange layers using REST API (Retrofit2 + OkHttp), background processing (Coroutines, WorkManager) and modern local storage solutions.</li>
+            <li>Actively participated in code reviews, performance profiling, debugging and resolution of device-specific issues and bottlenecks.</li>
+            <li>Collaborated with cross-functional teams (backend, product, QA) in an Agile environment (Jira, Trello).</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Traffic Jet</span>
+            <span class="job-dates">May 2026 — July 2026</span>
+          </div>
+          <ul>
+            <li>Developed Android applications from scratch, primarily WebView-based products, focusing on performance, usability and reliable integration with web services and backend systems.</li>
+            <li>Integrated and configured mobile attribution, analytics and tracking solutions, including AppsFlyer, OneSignal and Keitaro.</li>
+            <li>Collaborated with designers and backend developers to deliver and maintain production-ready Android applications.</li>
+            <li>Worked as an Android developer, taking ownership of technical decisions, troubleshooting complex integration issues and supporting the full Android development lifecycle.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
